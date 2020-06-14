@@ -1,0 +1,63 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: auto;
+  
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas: "program registry" "memory registry";
+}
+
+.program { grid-area: program; }
+
+.registry { grid-area: registry; }
+
+.memory { grid-area: memory; }
+
+.halfRegister{
+  display: inline-block;
+}
+.halfRegister > input{
+  width: 3.75rem;
+}
+
+.register {
+  display: block;
+}
+
+.fullRegister{
+  padding-top: 1px;
+  padding-bottom: 0px;
+}
+
+.fullRegister > input{
+  width: 7.75rem;
+}
+
+.register input{
+  text-align: right;
+}
+
+.labelContainer {
+  display: inline-block;
+}
+
+.registerBlock{
+  overflow: hidden;
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 5px;
+}
+.hexdumpContainer{
+  height: 7rem;
+  overflow-y: hidden;
+}
+
+.memAdr{
+  float: right;
+}

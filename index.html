@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symulator rejestrów intel 8086</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="program">
+
+        <!-- <input type="text" name="indexA" id="AH"> -->
+
+        <textarea id="prog" name="prog" rows="15" cols="66" placeholder="Write your instructions here"></textarea><br>
+        <button onclick="run()">run</button>
+        <div class="memAdr">
+          <label for="memoryAddress">Memory Adress</label>
+          <input type="text" name="memoryAddress" id="memoryAddress" maxlength="5" placeholder="0">
+        </div>
+        
+      </div>
+      <div class="registry">
+
+        <div class="mainRegisters registerBlock">
+
+          <div class="axContainer register">
+            <div class="ahContainer halfRegister">
+              <label for="AH">AH</label><br>
+              <input type="text" name="AH" id="AH" maxlength="8" minlength="8" pattern="^[0-1]{1,}$">
+            </div>
+            <div class="alContainer halfRegister">
+              <label for="AL">AL</label><br>
+              <input type="text" name="AL" id="AL" maxlength="8" minlength="8" pattern="^[0-1]{1,}$">
+            </div>
+            <div class="labelContainer">
+              <br><label for="AX"></label>AX</label>
+            </div>
+          </div>
+
+          <div class="bxContainer register">
+            <div class="bhContainer halfRegister">
+              <label for="BH">BH</label><br>
+              <input type="text" name="BH" id="BH">
+            </div>
+            <div class="blContainer halfRegister">
+              <label for="BL">BL</label><br>
+              <input type="text" name="BL" id="BL">
+            </div>
+            <div class="labelContainer">
+              <br><label for="BX">BX</label>
+            </div>
+          </div>
+          
+          <div class="cxContainer register">
+            <div class="chContainer halfRegister">
+              <label for="CH">CH</label><br>
+              <input type="text" name="CH" id="CH">
+            </div>
+            <div class="clContainer halfRegister">
+              <label for="CL">CL</label><br>
+              <input type="text" name="CL" id="CL">
+            </div>
+            <div class="labelContainer">
+              <br><label for="CX">CX</label>
+            </div>
+          </div>
+
+          <div class="dxContainer register">
+            <div class="dhContainer halfRegister">
+              <label for="DH">DH</label><br>
+              <input type="text" name="DH" id="DH">
+            </div>
+            <div class="dlContainer halfRegister">
+              <label for="DL">DL</label><br>
+              <input type="text" name="DL" id="DL">
+            </div>
+            <div class="labelContainer">
+              <br><label for="DX">DX</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="indexRegisters registerBlock">
+
+          <div class="bpContainer fullRegister">
+            <input type="text" name="BP" id="BP" maxlength="16" minlength="8">
+            <label for="BP">&nbspBP</label>
+          </div>
+
+          <div class="spContainer fullRegister">
+            <input type="text" name="SP" id="SP" maxlength="16" minlength="8">
+            <label for="SP">&nbspSP</label>
+          </div>
+
+          <div class="siContainer fullRegister">
+            <input type="text" name="SI" id="SI" maxlength="16" minlength="8">
+            <label for="SI">&nbspSI</label>
+          </div>
+
+          <div class="diContainer fullRegister">
+            <input type="text" name="DI" id="DI" maxlength="16" minlength="8">
+            <label for="DI">&nbspDI</label>
+          </div>
+        </div>
+
+
+        <div class="segmentRegisters registerBlock">
+          <div class="csContainer fullRegister">
+            <input type="text" name="CS" id="CS" maxlength="16" minlength="8">
+            <label for="CS">&nbspCS</label>
+          </div>
+
+          <div class="ssContainer fullRegister">
+            <input type="text" name="SS" id="SS" maxlength="16" minlength="8">
+            <label for="SS">&nbspSS</label>
+          </div>
+
+          <div class="dsContainer fullRegister">
+            <input type="text" name="DS" id="DS" maxlength="16" minlength="8">
+            <label for="DS">&nbspDS</label>
+          </div>
+
+          <div class="esContainer fullRegister">
+            <input type="text" name="ES" id="ES" maxlength="16" minlength="8">
+            <label for="ES">&nbspES</label>
+          </div>
+        </div>
+        
+        
+      </div>
+      <div class="memory">
+        <div class="hexdumpContainer">
+          <code id="hexdump">
+
+          </code>
+        </div>
+        
+
+      </div>
+    </div>
+    
+  </body>
+</html>
