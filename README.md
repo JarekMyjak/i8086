@@ -7,3 +7,6 @@ Project for computer systems architecture class
  - custom HELLO instruction that puts "Hello World" in provided memory adress
 ## Demo
 https://jarekmyjak.github.io/i8086/
+
+Try writing "HELLO 0"
+and click run
