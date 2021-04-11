@@ -104,7 +104,7 @@ let movInstruction = (a, b) => {
 
     if (Object.keys(registers).includes(a) && !Object.keys(registers).includes(b) && !regex.test(b)) {
         console.log()
-        registers[a] = fillWithZero(parseInt(b).toString(2),16);
+        registers[a] = fillWithZero(parseInt(b).toString(2), 16);
     }
 
     if (Object.keys(registers).includes(a) && Object.keys(registers).includes(b)) {
@@ -112,7 +112,7 @@ let movInstruction = (a, b) => {
         registers[a] = registers[b];
         //registers[b] = temp;
     } else if (Object.keys(registers).includes(a) && regex.test(b)) {
-        registers[a] = memory[memoryAccess(b)].toString(16)+memory[memoryAccess(b)+1].toString(16);
+        registers[a] = memory[memoryAccess(b)].toString(16) + memory[memoryAccess(b) + 1].toString(16);
 
 
     } else if (regex.test(a) && regex.test(b)) {
@@ -140,7 +140,6 @@ let movInstruction = (a, b) => {
     updatehexdump(0);
 }
 
-let putInstruction = () => {}
 
 let swapInstruction = (a, b) => {
     let regex = RegExp(/\[(.*?)\]/);
@@ -304,9 +303,6 @@ let evaluateLine = (input) => {
                 break;
             case 'HELLO':
                 helloInstruction(operandA);
-                break;
-            case 'PUT':
-                putInstruction();
                 break;
 
             default:
